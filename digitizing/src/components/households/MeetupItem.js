@@ -15,10 +15,19 @@ function MeetupItem(props) {
     } else {
       favoritesCtx.addFavorite({
         id: props.id,
-        title: props.title,
-        description: props.description,
-        image: props.image,
-        address: props.address,
+        name: props.name,
+        code: props.code,
+        link: props.link,
+        chv: props.chv,
+        village: props.village,
+        startDate: props.startDate,
+        county: props.county,
+        subCounty: props.subCounty,
+        division: props.division,
+        location: props.location,
+        subLocation: props.subLocation,
+        endDate: props.endDate,
+
       });
     }
   }
@@ -26,13 +35,20 @@ function MeetupItem(props) {
   return (
     <li className={classes.item}>
       <Card>
-        <div className={classes.image}>
-          <img src={props.image} alt={props.title} />
-        </div>
+
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
-          <p>{props.description}</p>
+          <h3>{props.name}</h3>
+          <address>{props.code}</address>
+          <p>{props.link}</p>
+          <p>{props.chv}</p>
+          <p>{props.village}</p>
+          <p>{props.startDate}</p>
+          <p>{props.county}</p>
+          <p>{props.subCounty}</p>
+          <p>{props.division}</p>
+          <p>{props.location}</p>
+          <p>{props.subLocation}</p>
+          <p>{props.endDate}</p>
         </div>
         <div className={classes.actions}>
           <button onClick={toggleFavoriteStatusHandler}>

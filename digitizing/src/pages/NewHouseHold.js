@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom';
 
-import NewMeetupForm from '../components/meetups/NewMeetupForm';
+import NewHouseHoldForm from '../components/households/NewHouseHoldForm';
 
-function NewMeetupPage() {
+function NewHouseHoldPage() {
   const history = useHistory();
 
   function addMeetupHandler(meetupData) {
@@ -22,10 +22,10 @@ function NewMeetupPage() {
 
   return (
     <section>
-      <h1>Add New Meetup</h1>
-      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+     <span>Welcome:</span> <h2>Register a New C.H.U</h2>
+      <NewHouseHoldForm onAddMeetup={addMeetupHandler} />
     </section>
   );
 }
 
-export default NewMeetupPage;
+export default NewHouseHoldPage;

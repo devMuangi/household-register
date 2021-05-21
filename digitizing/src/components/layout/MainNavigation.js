@@ -1,16 +1,19 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
-import FavoritesContext from '../../store/favorites-context';
+// import FavoritesContext from '../../store/favorites-context';
 
 function MainNavigation() {
-  const favoritesCtx = useContext(FavoritesContext);
+  // const favoritesCtx = useContext(FavoritesContext);
 
   return (
     <header className={classes.header}>
+      <Link to='/'>
       <div className={classes.logo}>Household register</div>
-      <nav>
+      </Link>
+    
+      {/* <nav>
         <ul>
           <li>
             <Link to='/'>All households</Link>
@@ -27,7 +30,7 @@ function MainNavigation() {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 }
