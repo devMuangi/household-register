@@ -5,7 +5,7 @@ import NewHouseHoldPage from './pages/NewHouseHold';
 import FavoritesPage from './pages/Favorites';
 import Layout from './components/layout/Layout';
 import LandingPage from './pages/LandingPage';
-
+import HouseHoldRegister from './pages/HouseHoldRegister';
 function App() {
   return (
     <Layout>
@@ -19,9 +19,11 @@ function App() {
         <Route path='/all-households'>
           <AllMeetupsPage />
         </Route>
-       
         <Route path='/favorites'>
           <FavoritesPage />
+        </Route>
+        <Route path='/householdregister'>
+          <HouseHoldRegister />
         </Route>
       </Switch>
     </Layout>

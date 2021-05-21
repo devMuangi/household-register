@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
-function NewHouseHoldForm(props) {
+function HouseHoldRegisterForm(props) {
   const nameInputRef = useRef();
   const codeInputRef = useRef();
   const linkInputRef = useRef();
@@ -107,14 +107,14 @@ function NewHouseHoldForm(props) {
           <button>Add Household</button>
         </div>
       </form>
-      <Link to='/householdregister'>
+      {/* <Link to='/householdregister'>
       <div className={classes.actions}>
           <button>Next</button>
         </div>
-      </Link>
+      </Link> */}
       
     </Card>
   );
 }
 
-export default NewHouseHoldForm;
+export default HouseHoldRegisterForm;
