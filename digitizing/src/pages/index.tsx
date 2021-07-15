@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import prisma from '../lib/prisma';
+import prisma from '../../lib/prisma';
 import { GetServerSideProps } from 'next'
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
