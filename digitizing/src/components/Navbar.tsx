@@ -1,12 +1,13 @@
 import { ReactNode } from "react";
-import styles from '../../styles/Home.module.css'
+import  Link   from 'next/link';
+
 import Image from "next/image";
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
+  // Link,
   IconButton,
   Button,
   Menu,
@@ -20,23 +21,35 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-const Links = ["Dashboard", "CHUS", "CHVS", "HOUSEHOLDS"];
+// const Links = ["Dashboard", "CHUS", "CHVS", "HOUSEHOLDS"];
+const Links = [
+  {to:'/dashboard',
+    name:'Dashboard'},
+    {to:'/CHUS',
+      name:'CHUS'},
+      {to:'/CHVS',
+    name:'CHVS'},
+    {to:'/HOUSEHOLDS',
+  name:'HOUSEHOLDS'}
+]
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
-
+// const NavLink = ({ children }: { children: ReactNode }) => (
+  
+//     <Link
+    
+//     // px={2}
+//     // py={1}
+//     // rounded={"md"}
+//     // _hover={{
+//     //   textDecoration: "none",
+//     //   bg: useColorModeValue("gray.200", "gray.700"),
+//     // }}
+//     href={"CHUS"}
+//     >
+//     {children}
+//   </Link>
+//   );
+ 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -58,7 +71,8 @@ export default function Navbar() {
                 <Image
                   src="/logo1.png"
                   alt="Logo"
-                  width={72}
+                  objectFit="contain"
+                  width={70}
                   height={50}
                 />
               </span>
@@ -69,7 +83,8 @@ export default function Navbar() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                // <NavLink key={link}>{link}</NavLink>
+                <Link key={link} href={link.to}>{link.name}</Link>
               ))}
             </HStack>
           </HStack>
