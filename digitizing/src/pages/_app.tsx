@@ -1,12 +1,14 @@
 import "../../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
+
+import { Provider } from "next-auth/client";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
-      <Navbar/>
+      <Provider session={pageProps.session}>
       <Component {...pageProps} />
+       </Provider>
     </ChakraProvider>
   );
 }

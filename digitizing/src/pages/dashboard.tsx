@@ -27,7 +27,7 @@ import {
 //   }
 
 const dashboard = () => {
-    console.log(`${process.env.NEXTAUTH_URL}/api/chus`)
+ 
 
 
   return (
