@@ -8,8 +8,7 @@ let user = await prisma.user.findUnique({
         id: true,
         email: true,
         name: true,
-        image: true,
-        isSupplier: true,
+        isChv: true,
     }
 });
 

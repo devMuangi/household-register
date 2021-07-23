@@ -34,8 +34,10 @@ const SignIn = ({ csrfToken }) => {
       email: email,
       password: password,
     });
+  
+    
 
-    if (response.error) {
+    if (response.status === 401) {
       return toast({
         title: "Incorrect credentails.",
         status: "error",
@@ -43,7 +45,9 @@ const SignIn = ({ csrfToken }) => {
         duration: 9000,
         isClosable: true,
       });
+  
     } else {
+      console.log('accepted',response)
       return await Router.push("/dashboard");
     }
   };

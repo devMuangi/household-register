@@ -25,13 +25,17 @@ export default NextAuth({
         // Add logic here to look up the user from the credentials supplied
         const res = await login(credentials.email, credentials.password);
         const user = await res;
-        console.log(user);
+        console.log(user)
+      
+        
 
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
+          // console.log('here')
           return user;
         } else {
           // If you return null or false then the credentials will be rejected
+          // console.log('not here')
           return null;
           // You can also Reject this callback with an Error or with a URL:
           // throw new Error('error message') // Redirect to error page
@@ -63,6 +67,7 @@ export default NextAuth({
       //  below we set "user" param of "session" to value received from "jwt" callback
       const userFromDatabase = await getUserByEmail(session.user.email);
       session.user = userFromDatabase;
+      console.log(session)
       return Promise.resolve(session);
     },
   },
